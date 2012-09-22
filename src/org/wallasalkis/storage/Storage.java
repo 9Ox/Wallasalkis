@@ -15,5 +15,7 @@ public class Storage {
 	
 	public static Tile cannonTile = new Tile(3007, 3352, 0);
 	
-	public static int baseId = 6;
+	public static int baseId = 6,
+			pouchId = 12093,
+			scrollId = 12435;
 }
