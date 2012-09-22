@@ -18,10 +18,11 @@ public class WallasalkisMain extends ActiveScript {
 	@Override
 	protected void setup() {
 		startExp = Skills.getExperience(Skills.RANGE);
-		provide(new Teleport());
-		provide(new PrayerHandler());
-		provide(new PlaceCannon());
-		provide(new LoadCannon());
+		//provide(new Teleport());
+		//provide(new PrayerHandler());
+		//provide(new PlaceCannon());
+		//provide(new LoadCannon());
+		provide(new Loot());
 		submit(new LoopTask() {
 			public int loop() {
 				renewal++;
