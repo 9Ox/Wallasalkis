@@ -19,13 +19,12 @@ public class WallasalkisMain extends ActiveScript implements MessageListener {
 	@SuppressWarnings("unused")
 	private int startExp, gainedExp;
 	
-	public static boolean usingYak = false, 
-			refreshCannon = false;
+	public static boolean refreshCannon = false;
 	
 	@Override
 	protected void setup() {
 		if (Inventory.getItem(Storage.scrollId) != null) {
-			usingYak = true;
+			provide(new YakHandler());
 		}
 		startExp = Skills.getExperience(Skills.RANGE);
 		//provide(new Teleport());
