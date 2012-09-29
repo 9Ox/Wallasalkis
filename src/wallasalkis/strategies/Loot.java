@@ -62,7 +62,7 @@ public class Loot extends Node {
 					if (seeds.isOnScreen()) {
 						if (!Players.getLocal().isMoving()) {
 							Mouse.move(seeds.getCentralPoint().x,
-									charms.getCentralPoint().y);
+									seeds.getCentralPoint().y);
 							Task.sleep(5, 11);
 							if (seeds.getGroundItem().getName()
 									.equalsIgnoreCase("Torstol seed")) {
