@@ -86,32 +86,25 @@ public class WallasalkisMain extends ActiveScript implements PaintListener {
 						+ (bankedLantadyme * lseedPrice);
 				charmCount = goldCount + greenCount + crimsonCount + blueCount;
 				if (Inventory.getItem(Storage.charmIds[0]) != null) {
-					blueCount = Inventory.getItem(Storage.charmIds[0])
-							.getStackSize();
+					blueCount = Inventory.getCount(true, Storage.charmIds[0]);
 				}
 				if (Inventory.getItem(Storage.charmIds[1]) != null) {
-					crimsonCount = Inventory.getItem(Storage.charmIds[1])
-							.getStackSize();
+					crimsonCount = Inventory.getCount(true, Storage.charmIds[1]);
 				}
 				if (Inventory.getItem(Storage.charmIds[2]) != null) {
-					greenCount = Inventory.getItem(Storage.charmIds[2])
-							.getStackSize();
+					greenCount = Inventory.getCount(true, Storage.charmIds[2]);
 				}
 				if (Inventory.getItem(Storage.charmIds[3]) != null) {
-					goldCount = Inventory.getItem(Storage.charmIds[3])
-							.getStackSize();
+					goldCount = Inventory.getCount(true, Storage.charmIds[3]);
 				}
 				if (Inventory.getItem(Storage.runeIds[0]) != null) {
-					deathRuneCount = Inventory.getItem(Storage.runeIds[0])
-							.getStackSize();
+					deathRuneCount = Inventory.getCount(true, Storage.runeIds[0]);
 				}
 				if (Inventory.getItem(Storage.runeIds[1]) != null) {
-					bloodRuneCount = Inventory.getItem(Storage.runeIds[1])
-							.getStackSize();
+					bloodRuneCount = Inventory.getCount(true, Storage.runeIds[1]);
 				}
 				if (Inventory.getItem(Storage.runeIds[2]) != null) {
-					essCount = Inventory.getItem(Storage.runeIds[2])
-							.getStackSize();
+					essCount = Inventory.getCount(true, Storage.runeIds[2]);
 				}
 				gloveCount = bankedGloves;
 				bootCount = bankedBoots;
