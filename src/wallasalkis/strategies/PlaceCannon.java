@@ -7,7 +7,6 @@ import org.powerbot.game.api.methods.node.SceneEntities;
 import org.powerbot.game.api.methods.tab.Inventory;
 import org.powerbot.game.api.methods.widget.Camera;
 import org.powerbot.game.api.util.Random;
-import org.powerbot.game.api.wrappers.node.SceneObject;
 
 import wallasalkis.main.WallasalkisMain;
 import wallasalkis.storage.Storage;
@@ -20,7 +19,7 @@ public class PlaceCannon extends Node {
 	
 	@Override
 	public void execute() {
-		WallasalkisMain.s = "PlaceCannon()";
+		WallasalkisMain.s = "PlaceCannon";
 		try {
 		if (Players.getLocal().getLocation().equals(Storage.cannonTile.getLocation())) {
 			if (Players.getLocal().getAnimation() != 827 || !Players.getLocal().isMoving()) {
@@ -43,7 +42,6 @@ public class PlaceCannon extends Node {
 		}
 		} catch (Exception e) {
 			System.out.println("Missing Cannon");
-
 		}
 	}
 }

@@ -22,40 +22,30 @@ public class RefreshCannon extends Node {
 		SceneObject cannon = SceneEntities.getNearest(Storage.baseId);
 		WallasalkisMain.refreshCannon = true;
 		WallasalkisMain.s = "RefreshCannon()";
-		if (cannon != null && cannon.isOnScreen())
-        {
-			if (Inventory.getCount() > 24)
-            {
-                while (Inventory.getCount() > 24)
-                {
-                    if (Inventory.getItem(Storage.prayerFlaskIds) != null)
-                    {
+		if (cannon != null && cannon.isOnScreen()) {
+			if (Inventory.getCount() > 24) {
+                while (Inventory.getCount() > 24) {
+                    if (Inventory.getItem(Storage.prayerFlaskIds) != null) {
                         Inventory.getItem(Storage.prayerFlaskIds)
                                 .getWidgetChild().interact("Drop");
                     }
-                    else if (Inventory.getItem(Storage.prayerPotionIds) != null)
-                    {
+                    else if (Inventory.getItem(Storage.prayerPotionIds) != null) {
                         Inventory.getItem(Storage.prayerPotionIds)
                                 .getWidgetChild().interact("Drop");
                     }
-                    else if (Inventory.containsOneOf(Storage.renewalFlaskIds))
-                    {
+                    else if (Inventory.containsOneOf(Storage.renewalFlaskIds)) {
                         Inventory.getItem(Storage.renewalFlaskIds)
                         .getWidgetChild().interact("Drop");
                     }
-                    else if (Inventory.containsOneOf(Storage.renewalPotionIds))
-                    {
+                    else if (Inventory.containsOneOf(Storage.renewalPotionIds)) {
                         Inventory.getItem(Storage.renewalPotionIds)
                         .getWidgetChild().interact("Drop");
                     }
                 }
             }
-            else
-            {
-                if (!Players.getLocal().isMoving())
-                {
-                    if (cannon.interact("Pick-up"))
-                    {
+            else {
+                if (!Players.getLocal().isMoving()) {
+                    if (cannon.interact("Pick-up")) {
                         Task.sleep(5000, 6001);
                         WallasalkisMain.refresh = 0;
                         WallasalkisMain.refreshCannon = false;
@@ -63,8 +53,7 @@ public class RefreshCannon extends Node {
                 }
             }
 		}
-        else
-        {
+        else {
 			Walking.walk(Storage.cannonTile);
 		}
 	}

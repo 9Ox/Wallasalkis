@@ -16,26 +16,25 @@ public class LoadCannon extends Node {
 	public boolean activate() {
 		SceneObject cannon = SceneEntities.getNearest(6);
 		return WallasalkisMain.loadCannon > Random.nextInt(30, 40)
-				&& cannon != null
-				&& Prayer.getPoints() > 160
+				&& cannon != null && Prayer.getPoints() > 155
 				&& !WallasalkisMain.refreshCannon;
 	}
 
 	@Override
 	public void execute() {
-		WallasalkisMain.s = "LoadCannon()";
+		WallasalkisMain.s = "LoadCannon";
 		try {
-		SceneObject cannon = SceneEntities.getNearest(6);
-		if (cannon != null) {
-			if (cannon.isOnScreen()) {
-				if (cannon.interact("Fire")) {
-					WallasalkisMain.loadCannon = 0;
-					Task.sleep(1000, 1501);
+			SceneObject cannon = SceneEntities.getNearest(6);
+			if (cannon != null) {
+				if (cannon.isOnScreen()) {
+					if (cannon.interact("Fire")) {
+						WallasalkisMain.loadCannon = 0;
+						Task.sleep(1000, 1501);
+					}
+				} else {
+					Walking.walk(Storage.cannonTile);
 				}
-			} else {
-				Walking.walk(Storage.cannonTile);
 			}
-		}
 		} catch (Exception e) {
 
 		}

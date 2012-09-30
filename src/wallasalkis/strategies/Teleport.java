@@ -26,7 +26,7 @@ public class Teleport extends Node {
 	@Override
 	public void execute() {
 		SceneObject cannon = SceneEntities.getNearest(6);
-		WallasalkisMain.s = "Teleport()";
+		WallasalkisMain.s = "Teleport";
 		try {
 			if (WallasalkisMain.noPrayers
 					&& (!Inventory.containsOneOf(Storage.renewalFlaskIds) && !Inventory

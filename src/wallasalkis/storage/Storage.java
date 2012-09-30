@@ -50,8 +50,7 @@ public class Storage {
 		}
 	}
 
-    public static int levelMinusRealLevel(int skill)
-    {
+    public static int levelMinusRealLevel(int skill) {
         return Skills.getLevel(skill) - Skills.getRealLevel(skill);
     }
 	public static int getPrice(final int id) {
