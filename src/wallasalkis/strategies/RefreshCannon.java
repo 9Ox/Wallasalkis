@@ -21,7 +21,7 @@ public class RefreshCannon extends Node {
 	public void execute() {
 		SceneObject cannon = SceneEntities.getNearest(Storage.baseId);
 		WallasalkisMain.refreshCannon = true;
-		WallasalkisMain.s = "RefreshCannon()";
+		WallasalkisMain.s = "RefreshCannon";
 		if (cannon != null && cannon.isOnScreen()) {
 			if (Inventory.getCount() > 24) {
                 while (Inventory.getCount() > 24) {

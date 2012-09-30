@@ -17,6 +17,7 @@ public class YakHandler extends Node {
 		return (Prayer.getPoints() > 155
 				&& !WallasalkisMain.refreshCannon
 				&& Inventory.getItem(Storage.scrollId) != null
+				&& WallasalkisMain.usingYak
 				&& SceneEntities.getNearest(Storage.baseId) != null
 				&& (Inventory.containsOneOf(Storage.skeletalIds)
 						|| Inventory.containsOneOf(Storage.seedIds) || Inventory

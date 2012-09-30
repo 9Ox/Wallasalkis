@@ -20,7 +20,8 @@ import org.powerbot.game.api.util.Random;
 import wallasalkis.storage.Storage;
 import wallasalkis.strategies.*;
 
-@Manifest(name = "Auto Wallasalkis BETA", description = "Kills wallasalkis for charms.", version = 0.13, authors = {"TaylorSwift", "Jdog653"},
+@Manifest(name = "Auto Wallasalkis BETA", description = "Kills wallasalkis for charms.", version = 0.14, 
+		authors = {"TaylorSwift", "Jdog653"},
 		website = "http://www.powerbot.org/community/topic/807819-auto-wallasalkis-beta-80k-range-xp-per-hour-130-charms-per-hour-up-to-1m-cash-per-hour-with-yak/")
 public class WallasalkisMain extends ActiveScript implements PaintListener {
 	private final Tree scriptTree = new Tree(new Node[] {
@@ -118,7 +119,7 @@ public class WallasalkisMain extends ActiveScript implements PaintListener {
 			}
 		});
 		// Informs the user that the script has successfully started
-		log.info("Wallsalkis BETA 0.13 started");
+		log.info("Wallsalkis BETA 0.14 started");
 		log.info("If you experience any bugs, please report them on the script thread");
 
 		// Stores prices
@@ -203,8 +204,8 @@ public class WallasalkisMain extends ActiveScript implements PaintListener {
 		g.drawString("Profit /h: " + Storage.getPerHour(profit, startTime), 5, 150);
 		g.drawString("Range xp: " + gainedExp, 5, 160);
 		g.drawString("Range xp /h: " + Storage.getPerHour(gainedExp, startTime), 5, 170);
-		g.drawString("Cannon refresh in: " + (18 - refresh) + " minutes", 5, 180);
-		g.drawString(s, 5, 190);
+		g.drawString("Decay timer: " + (18 - refresh) + " minutes", 5, 180);
+		g.drawString("Node: " + s, 5, 190);
 		g.drawString("Timer: " + hours + ":" + minutes + ":" + seconds, 5, 201);
 		} catch (Exception e) {
 			e.printStackTrace();
