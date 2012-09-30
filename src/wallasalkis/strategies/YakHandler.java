@@ -8,6 +8,7 @@ import org.powerbot.game.api.methods.node.SceneEntities;
 import org.powerbot.game.api.methods.tab.Inventory;
 import org.powerbot.game.api.methods.tab.Prayer;
 import org.powerbot.game.api.methods.tab.Skills;
+import org.powerbot.game.api.wrappers.node.Item;
 import org.powerbot.game.api.wrappers.node.SceneObject;
 
 import wallasalkis.main.WallasalkisMain;
@@ -16,10 +17,9 @@ import wallasalkis.storage.Storage;
 public class YakHandler extends Node {
 	@Override
 	public boolean activate() {
-		SceneObject cannon = SceneEntities.getNearest(Storage.baseId);
 		return Prayer.getPoints() > 155 && !WallasalkisMain.refreshCannon
 				&& Inventory.getItem(Storage.scrollId) != null
-				&& cannon != null
+				&& SceneEntities.getNearest(Storage.baseId) != null
 				&& (Inventory.containsOneOf(Storage.skeletalIds)
 						|| Inventory.containsOneOf(Storage.seedIds)
 						|| Inventory.containsOneOf(Storage.herbIds));
@@ -44,7 +44,90 @@ public class YakHandler extends Node {
 					Task.sleep(1000, 1501);
 				}
 			}
-			if (Inventory.getItem(Storage.skeletalIds[0]) != null) {
+
+            for(int i = 0; i < Storage.skeletalIds.length; i++)
+            {
+                if(Inventory.getItem(Storage.skeletalIds[i]) != null)
+                {
+                    Widgets.get(548).getChild(165).interact("Cast");
+
+                    if (Inventory.getItem(Storage.skeletalIds[0]).getWidgetChild().click(true))
+                    {
+                        System.out.println("Click success");
+                        switch(i)
+                        {
+                            case 0:
+                                WallasalkisMain.bankedGloves++;
+                                break;
+                            case 1:
+                                WallasalkisMain.bankedBoots++;
+                                break;
+                        }
+                        Task.sleep(1500, 2001);
+                     }
+                }
+            }
+
+            for(int i = 0; i < Storage.seedIds.length; i++)
+            {
+                if(Inventory.getItem(Storage.seedIds[i]) != null)
+                {
+                    Widgets.get(548).getChild(165).interact("Cast");
+
+                    if (Inventory.getItem(Storage.seedIds[0]).getWidgetChild().click(true))
+                    {
+                        System.out.println("Click success");
+                        switch(i)
+                        {
+                            case 0:
+                                WallasalkisMain.bankedTorstol++;
+                                break;
+                            case 1:
+                                WallasalkisMain.bankedSnapdragon++;
+                                break;
+                            case 2:
+                                WallasalkisMain.bankedLantadyme++;
+                                break;
+                            case 3:
+                                WallasalkisMain.bankedDwarfWeed++;
+
+                        }
+                        Task.sleep(1500, 2001);
+                    }
+                }
+            }
+
+            for(int i = 0; i < Storage.herbIds.length; i++)
+            {
+                if(Inventory.getItem(Storage.herbIds[i]) != null)
+                {
+                    Widgets.get(548).getChild(165).interact("Cast");
+
+                    if (Inventory.getItem(Storage.herbIds[0]).getWidgetChild().click(true))
+                    {
+                        System.out.println("Click success");
+                        //l d r a
+                        switch(i)
+                        {
+                            case 0:
+                                WallasalkisMain.lCount++;
+                                break;
+                            case 1:
+                                WallasalkisMain.dCount++;
+                                break;
+                            case 2:
+                                WallasalkisMain.rCount++;
+                                break;
+                            case 3:
+                                WallasalkisMain.aCount++;
+
+                        }
+                        Task.sleep(1500, 2001);
+                    }
+                }
+            }
+
+			/*if (Inventory.getItem(Storage.skeletalIds[0]) != null) {
 				Widgets.get(548).getChild(165).interact("Cast");
 				if (Inventory.getItem(Storage.skeletalIds[0]).getWidgetChild()
 						.click(true)) {
@@ -124,7 +207,7 @@ public class YakHandler extends Node {
 					WallasalkisMain.aCount++;
 					Task.sleep(1500, 2001);
 				}
-			}
+			}*/
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
