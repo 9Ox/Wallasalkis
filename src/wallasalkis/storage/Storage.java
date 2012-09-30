@@ -7,6 +7,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 
+import org.powerbot.game.api.methods.tab.Skills;
 import org.powerbot.game.api.wrappers.Tile;
 
 public class Storage {
@@ -48,7 +49,11 @@ public class Storage {
 			}
 		}
 	}
-	
+
+    public static int levelMinusRealLevel(int skill)
+    {
+        return Skills.getLevel(skill) - Skills.getRealLevel(skill);
+    }
 	public static int getPrice(final int id) {
 		try {
 			final URL url = new URL(
