@@ -7,3 +7,6 @@
 *.project
 *.classpath
 *.prefs
+*.name
+*.xml
+*.iml

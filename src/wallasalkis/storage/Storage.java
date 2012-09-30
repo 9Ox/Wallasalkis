@@ -71,10 +71,8 @@ public class Storage {
 		}
 		return -1;
 	}
-	
-	public static long startTime = System.currentTimeMillis();
-	
-	public static int getPerHour(final long value) {
-		   return (int) (value * 3600000D / (System.currentTimeMillis() - startTime));
-    }
+
+	public static long getPerHour(final long value, final long startTime) {
+    return (long)(value * 3600000D / (System.currentTimeMillis() - startTime));
+}
 }

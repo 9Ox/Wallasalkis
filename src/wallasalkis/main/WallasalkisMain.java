@@ -194,15 +194,15 @@ public class WallasalkisMain extends ActiveScript implements PaintListener {
 		g.drawString("Gloves: " + gloveCount, 5, 80); // gloveCount
 		g.drawString("Boots: " + bootCount, 5, 90); // bootCount
 		g.drawString(
-				"Charms: " + charmCount + " (" + Storage.getPerHour(charmCount)
+				"Charms: " + charmCount + " (" + Storage.getPerHour(charmCount, startTime)
 						+ ")", 5, 100);
 		g.drawString("Blood runes: " + bloodRuneCount, 5, 110);
 		g.drawString("Death runes: " + deathRuneCount, 5, 120);
 		g.drawString("Pure essence: " + essCount, 5, 130);
 		g.drawString("Profit: " + profit, 5, 140);
-		g.drawString("Profit /h: " + Storage.getPerHour(profit), 5, 150);
+		g.drawString("Profit /h: " + Storage.getPerHour(profit, startTime), 5, 150);
 		g.drawString("Range xp: " + gainedExp, 5, 160);
-		g.drawString("Range xp /h: " + Storage.getPerHour(gainedExp), 5, 170);
+		g.drawString("Range xp /h: " + Storage.getPerHour(gainedExp, startTime), 5, 170);
 		g.drawString("Cannon refresh in: " + (18 - refresh) + " minutes", 5, 180);
 		g.drawString(s, 5, 190);
 		g.drawString("Timer: " + hours + ":" + minutes + ":" + seconds, 5, 201);
