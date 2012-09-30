@@ -30,11 +30,9 @@ public class PrayerHandler extends Node {
 			if (Inventory.getItem(Storage.prayerFlaskIds) != null) {
 				Inventory.getItem(Storage.prayerFlaskIds).getWidgetChild().click(true);
 				Task.sleep(1100, 1201);
-				Inventory.getItem(Storage.prayerFlaskIds).getWidgetChild().click(true);
 			} else if (Inventory.getItem(Storage.prayerPotionIds) != null) {
 				Inventory.getItem(Storage.prayerPotionIds).getWidgetChild().click(true);
 				Task.sleep(1100, 1201);
-				Inventory.getItem(Storage.prayerPotionIds).getWidgetChild().click(true);
 			}
 		}
 		if (WallasalkisMain.renewal > 300) {
