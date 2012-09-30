@@ -15,8 +15,7 @@ import wallasalkis.storage.Storage;
 public class PlaceCannon extends Node {
 	@Override
 	public boolean activate() {
-		SceneObject cannon = SceneEntities.getNearest(6);
-		return cannon == null;
+		return SceneEntities.getNearest(6) == null;
 	}
 	
 	@Override
@@ -43,8 +42,8 @@ public class PlaceCannon extends Node {
 			}
 		}
 		} catch (Exception e) {
-			System.out.println("Lol, we don't have a cannon in our inventory." +
-					"\n Lets be gay and throw a ton of NPE's");
+			System.out.println("Missing Cannon");
+
 		}
 	}
 }
