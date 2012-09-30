@@ -18,6 +18,7 @@ public class PotionHandler extends Node {
 		if (WallasalkisMain.range) {
 		return cannon != null
 				&& Prayer.getPoints() > 155
+                //Range
 				&& ((Skills.getLevel(Skills.RANGE) - Skills.getRealLevel(Skills.RANGE)) <= 3)
 						&& !WallasalkisMain.refreshCannon
 						&& (Inventory.containsOneOf(Storage.extremeFlaskIds)
@@ -27,7 +28,9 @@ public class PotionHandler extends Node {
 		} else if (WallasalkisMain.melee) {
 			return cannon != null
 					&& Prayer.getPoints() > 155
+                    //Attack
 					&& (Skills.getLevel(Skills.ATTACK) - Skills.getRealLevel(Skills.ATTACK) <= 3
+                            //Strength
 							|| Skills.getLevel(Skills.STRENGTH) - Skills.getRealLevel(Skills.STRENGTH) <= 3)
 							&& !WallasalkisMain.refreshCannon
 							&& (Inventory.containsOneOf(Storage.superAttackIds)
@@ -40,22 +43,22 @@ public class PotionHandler extends Node {
 	public void execute() {
 		WallasalkisMain.s = "PotionHandler()";
 		try {
-		if (Inventory.getItem(Storage.extremeFlaskIds) != null && Skills.getLevel(Skills.RANGE) - Skills.getRealLevel(Skills.RANGE) <= 3) {
+        if (Inventory.getItem(Storage.extremeFlaskIds) != null && Storage.levelMinusRealLevel(Skills.RANGE) <= 3) {
 			Inventory.getItem(Storage.extremeFlaskIds).getWidgetChild().click(true);
 			Task.sleep(1000,1501);
-		} else if (Inventory.getItem(Storage.extremePotionIds) != null && Skills.getLevel(Skills.RANGE) - Skills.getRealLevel(Skills.RANGE) <= 3 ) {
+        } else if (Inventory.getItem(Storage.extremePotionIds) != null && Storage.levelMinusRealLevel(Skills.RANGE) <= 3) {
 			Inventory.getItem(Storage.extremePotionIds).getWidgetChild().click(true);
 			Task.sleep(1000,1501);
-		} else if (Inventory.getItem(Storage.rangingFlaskIds) != null && Skills.getLevel(Skills.RANGE) - Skills.getRealLevel(Skills.RANGE) <= 3 ) {
+        } else if (Inventory.getItem(Storage.rangingFlaskIds) != null && Storage.levelMinusRealLevel(Skills.RANGE) <= 3) {
 			Inventory.getItem(Storage.rangingFlaskIds).getWidgetChild().click(true);
 			Task.sleep(1000,1501);
-		} else if (Inventory.getItem(Storage.rangingPotionIds) != null && Skills.getLevel(Skills.RANGE) - Skills.getRealLevel(Skills.RANGE) <= 3 ) {
+        } else if (Inventory.getItem(Storage.rangingPotionIds) != null && Storage.levelMinusRealLevel(Skills.RANGE) <= 3) {
 			Inventory.getItem(Storage.rangingPotionIds).getWidgetChild().click(true);
 			Task.sleep(1000,1501);
-		} else if (Inventory.getItem(Storage.superAttackIds) != null && Skills.getLevel(Skills.ATTACK) - Skills.getRealLevel(Skills.ATTACK) <= 3) {
+        } else if (Inventory.getItem(Storage.superAttackIds) != null && Storage.levelMinusRealLevel(Skills.ATTACK) <= 3) {
 			Inventory.getItem(Storage.superAttackIds).getWidgetChild().click(true);
 			Task.sleep(1000,1501);
-		} else if (Inventory.getItem(Storage.superStrengthIds) != null && Skills.getLevel(Skills.ATTACK) - Skills.getRealLevel(Skills.ATTACK) <= 3) {
+        } else if (Inventory.getItem(Storage.superStrengthIds) != null && Storage.levelMinusRealLevel(Skills.ATTACK) <= 3) {
 			Inventory.getItem(Storage.superStrengthIds).getWidgetChild().click(true);
 			Task.sleep(1000,1501);
 		}

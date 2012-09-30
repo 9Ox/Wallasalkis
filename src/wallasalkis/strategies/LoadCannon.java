@@ -37,7 +37,7 @@ public class LoadCannon extends Node {
 			}
 		}
 		} catch (Exception e) {
-			
+
 		}
 	}
 }
