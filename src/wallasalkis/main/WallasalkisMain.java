@@ -20,7 +20,7 @@ import org.powerbot.game.api.util.Random;
 import wallasalkis.storage.Storage;
 import wallasalkis.strategies.*;
 
-@Manifest(name = "Auto Wallasalkis BETA", description = "Kills wallasalkis for charms.", version = 0.13, authors = "TaylorSwift",
+@Manifest(name = "Auto Wallasalkis BETA", description = "Kills wallasalkis for charms.", version = 0.13, authors = {"TaylorSwift", "Jdog653"},
 		website = "http://www.powerbot.org/community/topic/807819-auto-wallasalkis-beta-80k-range-xp-per-hour-130-charms-per-hour-up-to-1m-cash-per-hour-with-yak/")
 public class WallasalkisMain extends ActiveScript implements PaintListener {
 	private final Tree scriptTree = new Tree(new Node[] {

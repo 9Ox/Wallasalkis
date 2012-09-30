@@ -11,7 +11,7 @@ import org.powerbot.game.api.methods.tab.Skills;
 import org.powerbot.game.api.wrappers.Tile;
 
 public class Storage {
-	public static int[] cannonIds = { 6,8,10,12 },
+	public final static int[] cannonIds = { 6,8,10,12 },
 			prayerFlaskIds = { 23253,23251,23249,23247,23245,23243 }, //1,2,3,4,5,6
 			prayerPotionIds = { 143,141,139,2434 }, //1,2,3,4
 			renewalFlaskIds = { 23619,23617,23615,23613,23611,23609 }, //1,2,3,4,5,6
@@ -33,11 +33,11 @@ public class Storage {
 			superStrengthIds = { 161, 159, 157, 2440 },
 			superAttackIds = { 149, 147, 145, 2436 };
 	
-	public static Tile cannonTile = new Tile(1802, 4372, 1),
+	public static final Tile cannonTile = new Tile(1802, 4372, 1),
 			cannonTile2 = new Tile(1798,4378,1);
 			//cannonTile = new Tile(1802, 4372, 1)
 	
-	public static int baseId = 6,
+	public static final int baseId = 6,
 			pouchId = 12093,
 			scrollId = 12435;
 	
@@ -79,5 +79,5 @@ public class Storage {
 
 	public static long getPerHour(final long value, final long startTime) {
     return (long)(value * 3600000D / (System.currentTimeMillis() - startTime));
-}
+    }
 }
