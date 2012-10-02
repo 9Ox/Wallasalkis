@@ -21,7 +21,7 @@ public class PrayerHandler extends Node {
 
 	@Override
 	public void execute() {
-		WallasalkisMain.s = "PrayerHandler()";
+		WallasalkisMain.s = "PrayerHandler";
 		if (!Prayer.isQuickOn()) {
 			Prayer.toggleQuick(true);
 			Task.sleep(1000, 1501);
