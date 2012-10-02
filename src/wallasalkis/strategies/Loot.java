@@ -33,6 +33,10 @@ public class Loot extends Node {
 					.interact("Drop");
 			Task.sleep(1000, 1501);
 		}
+		if (Inventory.contains(Storage.spinTicketId)) {
+			Inventory.getItem(Storage.spinTicketId).getWidgetChild().click(true);
+			Task.sleep(1000, 1501);
+		}
 		try {
 			GroundItem charms = GroundItems.getNearest(Storage.charmIds), runes = GroundItems
 					.getNearest(Storage.runeIds), skeletalObjects = GroundItems
@@ -40,8 +44,15 @@ public class Loot extends Node {
 					.getNearest(Storage.prayerFlaskIds), potions = GroundItems
 					.getNearest(Storage.prayerPotionIds), seeds = GroundItems
 					.getNearest(Storage.seedIds), herbs = GroundItems
-					.getNearest(Storage.herbIds);
-			if (flasks != null && Inventory.getCount() < 24) {
+					.getNearest(Storage.herbIds),
+					ticket = GroundItems.getNearest(Storage.spinTicketId);
+			if (ticket != null && Storage.area.contains(ticket)) {
+				if (ticket.isOnScreen() && !Players.getLocal().isMoving()) {
+					ticket.interact("Take");
+				} else {
+					Walking.walk(ticket);
+				}
+			} else if (flasks != null && Inventory.getCount() < 24 && Storage.area.contains(flasks)) {
 				if (flasks.isOnScreen()) {
 					if (!Players.getLocal().isMoving()) {
 						flasks.interact("Take");
@@ -49,7 +60,7 @@ public class Loot extends Node {
 				} else {
 					Walking.walk(flasks);
 				}
-			} else if (potions != null && Inventory.getCount() < 24) {
+			} else if (potions != null && Inventory.getCount() < 24 && Storage.area.contains(potions)) {
 				if (potions.isOnScreen()) {
 					if (!Players.getLocal().isMoving()) {
 						potions.interact("Take");
@@ -57,7 +68,7 @@ public class Loot extends Node {
 				} else {
 					Walking.walk(potions);
 				}
-			} else if (seeds != null) {
+			} else if (seeds != null && Storage.area.contains(seeds)) {
 				if (Inventory.getCount() < 24
 						|| Inventory.contains(seeds.getId())) {
 					if (seeds.isOnScreen()) {
@@ -97,7 +108,7 @@ public class Loot extends Node {
 						Walking.walk(seeds);
 					}
 				}
-			} else if (charms != null) {
+			} else if (charms != null && Storage.area.contains(charms)) {
 				if (!Inventory.isFull() || Inventory.contains(charms.getId())) {
 					if (charms.isOnScreen()) {
 						if (!Players.getLocal().isMoving()) {
@@ -133,7 +144,7 @@ public class Loot extends Node {
 						Walking.walk(charms);
 					}
 				}
-			} else if (runes != null) {
+			} else if (runes != null && Storage.area.contains(runes)) {
 				if (!Inventory.isFull() || Inventory.contains(runes.getId())) {
 					if (runes.isOnScreen()) {
 						if (!Players.getLocal().isMoving()) {
@@ -161,7 +172,8 @@ public class Loot extends Node {
 						Walking.walk(runes);
 					}
 				}
-			} else if (skeletalObjects != null && Inventory.getCount() < 24) {
+			} else if (skeletalObjects != null && Inventory.getCount() < 24 
+					&& Storage.area.contains(skeletalObjects)) {
 				if (skeletalObjects.isOnScreen()) {
 					if (!Players.getLocal().isMoving()) {
 						Mouse.move(skeletalObjects.getCentralPoint().x,
@@ -169,7 +181,8 @@ public class Loot extends Node {
 						Task.sleep(50, 101);
 						String s = skeletalObjects.getGroundItem().getName();
 						if (s.equalsIgnoreCase("Skeletal gloves")
-								|| s.equalsIgnoreCase("Skeletal boots")) {
+								|| s.equalsIgnoreCase("Skeletal boots")
+								|| s.equalsIgnoreCase("Skull piece")) {
 							System.out.println("We found item: " + s);
 							Menu.select("Take", s);
 							Task.sleep(600, 1001);
@@ -193,7 +206,7 @@ public class Loot extends Node {
 					Walking.walk(skeletalObjects);
 				}
 
-			} else if (herbs != null && WallasalkisMain.usingYak) {
+			} else if (herbs != null && WallasalkisMain.usingYak && Storage.area.contains(herbs)) {
 				if (Inventory.getCount() < 24) {
 					if (herbs.isOnScreen()) {
 						if (!Players.getLocal().isMoving()) {

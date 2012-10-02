@@ -54,7 +54,7 @@ public class RefreshCannon extends Node {
             }
 		}
         else {
-			Walking.walk(Storage.cannonTile);
+			Walking.walk(Storage.tile);
 		}
 	}
 }

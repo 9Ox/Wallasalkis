@@ -13,6 +13,7 @@ import org.powerbot.core.script.job.state.Node;
 import org.powerbot.core.script.job.state.Tree;
 import org.powerbot.game.api.Manifest;
 import org.powerbot.game.api.methods.input.Mouse;
+import org.powerbot.game.api.methods.interactive.Players;
 import org.powerbot.game.api.methods.tab.Inventory;
 import org.powerbot.game.api.methods.tab.Skills;
 import org.powerbot.game.api.util.Random;
@@ -20,7 +21,7 @@ import org.powerbot.game.api.util.Random;
 import wallasalkis.storage.Storage;
 import wallasalkis.strategies.*;
 
-@Manifest(name = "Auto Wallasalkis BETA", description = "Kills wallasalkis for charms.", version = 0.14, 
+@Manifest(name = "Auto Wallasalkis BETA", description = "Kills wallasalkis for charms.", version = 0.15, 
 		authors = {"TaylorSwift", "Jdog653"},
 		website = "http://www.powerbot.org/community/topic/807819-auto-wallasalkis-beta-80k-range-xp-per-hour-130-charms-per-hour-up-to-1m-cash-per-hour-with-yak/")
 public class WallasalkisMain extends ActiveScript implements PaintListener {
@@ -50,7 +51,17 @@ public class WallasalkisMain extends ActiveScript implements PaintListener {
 	public static String s = "";
 
 	public void onStart() {
-		if (Inventory.containsOneOf(Storage.rangingFlaskIds) || Inventory.containsOneOf(Storage.rangingPotionIds)) {
+		if (Storage.inArea(Players.getLocal().getLocation(), Storage.room1)) {
+			Storage.tile = Storage.cannonTile1;
+			Storage.area = Storage.room1;
+		} else {
+			Storage.tile = Storage.cannonTile2;
+			Storage.area = Storage.room2;
+		}
+		if (Inventory.containsOneOf(Storage.rangingFlaskIds) 
+				|| Inventory.containsOneOf(Storage.rangingPotionIds)
+				|| Inventory.containsOneOf(Storage.extremeFlaskIds)
+				|| Inventory.containsOneOf(Storage.extremePotionIds)) {
 			range = true;
 		} else if (Inventory.containsOneOf(Storage.superAttackIds) || Inventory.containsOneOf(Storage.superStrengthIds)) {
 			melee = true;
@@ -112,7 +123,7 @@ public class WallasalkisMain extends ActiveScript implements PaintListener {
 			}
 		});
 		// Informs the user that the script has successfully started
-		log.info("Wallsalkis BETA 0.14 started");
+		log.info("Wallsalkis BETA 0.15 started");
 		log.info("If you experience any bugs, please report them on the script thread");
 
 		// Stores prices
@@ -167,8 +178,11 @@ public class WallasalkisMain extends ActiveScript implements PaintListener {
 		int x = Mouse.getX(), y = Mouse.getY();
 		int px = Mouse.getPressX(), py = Mouse.getPressY();
 		Graphics2D g = (Graphics2D) g1;
-		if (Storage.cannonTile != null) {
-			Storage.drawTile(Storage.cannonTile, Color.BLUE, g);
+		if (Storage.tile != null) {
+			Storage.drawTile(Storage.tile, Color.BLUE, g);
+		}
+		if (Storage.area != null) {
+			Storage.areaToMinimap(Storage.area, Color.WHITE, g);
 		}
 		if (Mouse.isPressed()) {
 			g.setColor(Color.RED);

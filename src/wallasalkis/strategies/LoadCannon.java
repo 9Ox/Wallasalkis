@@ -32,7 +32,7 @@ public class LoadCannon extends Node {
 						Task.sleep(1000, 1501);
 					}
 				} else {
-					Walking.walk(Storage.cannonTile);
+					Walking.walk(Storage.tile);
 				}
 			}
 		} catch (Exception e) {

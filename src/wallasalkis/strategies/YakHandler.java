@@ -55,7 +55,7 @@ public class YakHandler extends Node {
 			for (int i = 0; i < Storage.skeletalIds.length; i++) {
 				if (Inventory.getItem(Storage.skeletalIds[i]) != null) {
 					Widgets.get(548).getChild(165).interact("Cast");
-					if (Inventory.getItem(Storage.skeletalIds[0])
+					if (Inventory.getItem(Storage.skeletalIds[i])
 							.getWidgetChild().click(true)) {
 						System.out.println("Click success");
 						switch (i) {
@@ -73,7 +73,7 @@ public class YakHandler extends Node {
 			for (int i = 0; i < Storage.seedIds.length; i++) {
 				if (Inventory.getItem(Storage.seedIds[i]) != null) {
 					Widgets.get(548).getChild(165).interact("Cast");
-					if (Inventory.getItem(Storage.seedIds[0]).getWidgetChild()
+					if (Inventory.getItem(Storage.seedIds[i]).getWidgetChild()
 							.click(true)) {
 						System.out.println("Click success");
 						switch (i) {
@@ -97,7 +97,7 @@ public class YakHandler extends Node {
 			for (int i = 0; i < Storage.herbIds.length; i++) {
 				if (Inventory.getItem(Storage.herbIds[i]) != null) {
 					Widgets.get(548).getChild(165).interact("Cast");
-					if (Inventory.getItem(Storage.herbIds[0]).getWidgetChild()
+					if (Inventory.getItem(Storage.herbIds[i]).getWidgetChild()
 							.click(true)) {
 						System.out.println("Click success");
 						// l d r a

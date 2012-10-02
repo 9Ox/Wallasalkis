@@ -21,7 +21,7 @@ public class PlaceCannon extends Node {
 	public void execute() {
 		WallasalkisMain.s = "PlaceCannon";
 		try {
-		if (Players.getLocal().getLocation().equals(Storage.cannonTile.getLocation())) {
+		if (Players.getLocal().getLocation().equals(Storage.tile.getLocation())) {
 			if (Players.getLocal().getAnimation() != 827 || !Players.getLocal().isMoving()) {
 				if (Inventory.getItem(6) != null) {
 					Inventory.getItem(Storage.baseId).getWidgetChild().click(true);
@@ -29,14 +29,14 @@ public class PlaceCannon extends Node {
 				Task.sleep(1000,1501);
 			}
 		} else {
-			if (Storage.cannonTile.isOnScreen()) {
+			if (Storage.tile.isOnScreen()) {
 				if (!Players.getLocal().isMoving()) {
-					Storage.cannonTile.interact("Walk");
+					Storage.tile.interact("Walk");
 					Task.sleep(1000,1501);
 				}
 			} else {
 				Camera.setPitch(true);
-				Camera.turnTo(Storage.cannonTile);
+				Camera.turnTo(Storage.tile);
 				Camera.setPitch(Random.nextInt(30,70));
 			}
 		}

@@ -48,32 +48,32 @@ public class PotionHandler extends Node {
 		WallasalkisMain.s = "PotionHandler()";
 		try {
 			if (Inventory.getItem(Storage.extremeFlaskIds) != null
-					&& Storage.levelMinusRealLevel(Skills.RANGE) <= 3) {
+					&& Storage.getLevelBoost(Skills.RANGE) <= 3) {
 				Inventory.getItem(Storage.extremeFlaskIds).getWidgetChild()
 						.click(true);
 				Task.sleep(1000, 1501);
 			} else if (Inventory.getItem(Storage.extremePotionIds) != null
-					&& Storage.levelMinusRealLevel(Skills.RANGE) <= 3) {
+					&& Storage.getLevelBoost(Skills.RANGE) <= 3) {
 				Inventory.getItem(Storage.extremePotionIds).getWidgetChild()
 						.click(true);
 				Task.sleep(1000, 1501);
 			} else if (Inventory.getItem(Storage.rangingFlaskIds) != null
-					&& Storage.levelMinusRealLevel(Skills.RANGE) <= 3) {
+					&& Storage.getLevelBoost(Skills.RANGE) <= 3) {
 				Inventory.getItem(Storage.rangingFlaskIds).getWidgetChild()
 						.click(true);
 				Task.sleep(1000, 1501);
 			} else if (Inventory.getItem(Storage.rangingPotionIds) != null
-					&& Storage.levelMinusRealLevel(Skills.RANGE) <= 3) {
+					&& Storage.getLevelBoost(Skills.RANGE) <= 3) {
 				Inventory.getItem(Storage.rangingPotionIds).getWidgetChild()
 						.click(true);
 				Task.sleep(1000, 1501);
 			} else if (Inventory.getItem(Storage.superAttackIds) != null
-					&& Storage.levelMinusRealLevel(Skills.ATTACK) <= 3) {
+					&& Storage.getLevelBoost(Skills.ATTACK) <= 3) {
 				Inventory.getItem(Storage.superAttackIds).getWidgetChild()
 						.click(true);
 				Task.sleep(1000, 1501);
 			} else if (Inventory.getItem(Storage.superStrengthIds) != null
-					&& Storage.levelMinusRealLevel(Skills.STRENGTH) <= 3) {
+					&& Storage.getLevelBoost(Skills.STRENGTH) <= 3) {
 				Inventory.getItem(Storage.superStrengthIds).getWidgetChild()
 						.click(true);
 				Task.sleep(1000, 1501);
