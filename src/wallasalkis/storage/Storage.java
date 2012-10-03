@@ -42,8 +42,13 @@ public class Storage {
 			herbIds = { 2485, 217, 207, 211 }, //lantadyme, dwarfweed, ranarr, avantoe
 			superPrayerFlaskIds = { 23525 },
 			superPrayerPotionIds = { 15328 },
-			superStrengthIds = { 161, 159, 157, 2440 },
-			superAttackIds = { 149, 147, 145, 2436 };
+			superStrengthIds = { 161, 159, 157, 2440 }, //1,2,3,4
+			superAttackIds = { 149, 147, 145, 2436 }; //1,2,3,4
+	
+	public static final int baseId = 6,
+			pouchId = 12093,
+			scrollId = 12435,
+			spinTicketId = 24154;
 	
 	public static final Tile cannonTile1 = new Tile(1802, 4372, 1),
 			cannonTile2 = new Tile(1806, 4392, 1);
@@ -64,11 +69,6 @@ public class Storage {
 	public static boolean inArea(Tile t, Area a) {
 		return a.contains(t);
 	}
-	
-	public static final int baseId = 6,
-			pouchId = 12093,
-			scrollId = 12435,
-			spinTicketId = 24154;
 	
 	public static void drawTile(Tile loc, Color c, Graphics g) {
 		g.setColor(c);
