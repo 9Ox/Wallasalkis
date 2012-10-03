@@ -45,24 +45,23 @@ public class Storage {
 			SUPER_STRENGTH_IDS = { 161, 159, 157, 2440 }, //1,2,3,4
 			SUPER_ATTACK_IDS = { 149, 147, 145, 2436 }; //1,2,3,4
 	
-	public static final int baseId = 6,
-			pouchId = 12093,
-			scrollId = 12435,
-			spinTicketId = 24154;
+	public static final int BASE_ID = 6,
+			POUCH_ID = 12093,
+			SCROLL_ID = 12435,
+			SPIN_TICKET_ID = 24154;
 	
-	public static final Tile cannonTile1 = new Tile(1802, 4372, 1),
-			cannonTile2 = new Tile(1806, 4392, 1);
-			//cannonTile = new Tile(1802, 4372, 1)
+	public static final Tile CANNON_TILE_1 = new Tile(1802, 4372, 1),
+			CANNON_TILE_2 = new Tile(1806, 4392, 1);
 	
 	public static Tile tile;
 	
 	public static Area area;
 	
-	public static final Area room1 = new Area(new Tile(1807, 4365, 1),
+	public static final Area ROOM_1 = new Area(new Tile(1807, 4365, 1),
 				new Tile(1807, 4385, 1), new Tile(1793, 4385, 1),
 				new Tile(1793, 4365, 1), new Tile(1807, 4365, 1)),
 				
-			room2 = new Area(new Tile(1814, 4398, 1), new Tile(1796, 4398, 1),
+			ROOM_2 = new Area(new Tile(1814, 4398, 1), new Tile(1796, 4398, 1),
 					new Tile(1796, 4387, 1), new Tile(1814, 4387, 1),
 					new Tile(1814, 4398, 1));
 	

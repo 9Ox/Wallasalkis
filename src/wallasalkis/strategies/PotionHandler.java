@@ -14,7 +14,7 @@ import wallasalkis.storage.Storage;
 public class PotionHandler extends Node {
 	@Override
 	public boolean activate() {
-		SceneObject cannon = SceneEntities.getNearest(Storage.baseId);
+		SceneObject cannon = SceneEntities.getNearest(Storage.BASE_ID);
 		if (WallasalkisMain.range) {
 			return cannon != null
 					&& Prayer.getPoints() > 155

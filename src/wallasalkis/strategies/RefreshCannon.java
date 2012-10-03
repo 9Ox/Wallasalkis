@@ -19,7 +19,7 @@ public class RefreshCannon extends Node {
 
 	@Override
 	public void execute() {
-		SceneObject cannon = SceneEntities.getNearest(Storage.baseId);
+		SceneObject cannon = SceneEntities.getNearest(Storage.BASE_ID);
 		WallasalkisMain.refreshCannon = true;
 		WallasalkisMain.s = "RefreshCannon";
 		if (cannon != null && cannon.isOnScreen()) {

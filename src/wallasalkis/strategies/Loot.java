@@ -33,8 +33,8 @@ public class Loot extends Node {
 					.interact("Drop");
 			Task.sleep(1000, 1501);
 		}
-		if (Inventory.contains(Storage.spinTicketId)) {
-			Inventory.getItem(Storage.spinTicketId).getWidgetChild().click(true);
+		if (Inventory.contains(Storage.SPIN_TICKET_ID)) {
+			Inventory.getItem(Storage.SPIN_TICKET_ID).getWidgetChild().click(true);
 			Task.sleep(1000, 1501);
 		}
 		try {
@@ -45,7 +45,7 @@ public class Loot extends Node {
 					.getNearest(Storage.PRAYER_POTION_IDS), seeds = GroundItems
 					.getNearest(Storage.SEED_IDS), herbs = GroundItems
 					.getNearest(Storage.HERB_IDS),
-					ticket = GroundItems.getNearest(Storage.spinTicketId);
+					ticket = GroundItems.getNearest(Storage.SPIN_TICKET_ID);
 			if (ticket != null && Storage.area.contains(ticket)) {
 				if (ticket.isOnScreen() && !Players.getLocal().isMoving()) {
 					ticket.interact("Take");

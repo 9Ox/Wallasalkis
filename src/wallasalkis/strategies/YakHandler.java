@@ -16,9 +16,9 @@ public class YakHandler extends Node {
 	public boolean activate() {
 		return (Prayer.getPoints() > 155
 				&& !WallasalkisMain.refreshCannon
-				&& Inventory.getItem(Storage.scrollId) != null
+				&& Inventory.getItem(Storage.SCROLL_ID) != null
 				&& WallasalkisMain.usingYak
-				&& SceneEntities.getNearest(Storage.baseId) != null
+				&& SceneEntities.getNearest(Storage.BASE_ID) != null
 				&& (Inventory.containsOneOf(Storage.SKELETAL_IDS)
 						|| Inventory.containsOneOf(Storage.SEED_IDS) || Inventory
 							.containsOneOf(Storage.HERB_IDS))) 
@@ -29,7 +29,7 @@ public class YakHandler extends Node {
 	@Override
 	public void execute() {
 		WallasalkisMain.s = "YakHandler";
-		if (!Summoning.isFamiliarSummoned() && !Inventory.contains(Storage.pouchId)) {
+		if (!Summoning.isFamiliarSummoned() && !Inventory.contains(Storage.POUCH_ID)) {
 			WallasalkisMain.usingYak = false;
 		}
 		if (!Summoning.getLeftClickOption().equals(Summoning.Option.CAST)) {
@@ -46,8 +46,8 @@ public class YakHandler extends Node {
 							.getWidgetChild().click(true);
 					Task.sleep(600,1001);
 				}
-				if (Inventory.getItem(Storage.pouchId) != null) {
-					Inventory.getItem(Storage.pouchId).getWidgetChild()
+				if (Inventory.getItem(Storage.POUCH_ID) != null) {
+					Inventory.getItem(Storage.POUCH_ID).getWidgetChild()
 							.interact("Summon");
 					Task.sleep(1000, 1501);
 				}

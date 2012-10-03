@@ -51,12 +51,12 @@ public class WallasalkisMain extends ActiveScript implements PaintListener {
 	public static String s = "";
 
 	public void onStart() {
-		if (Storage.inArea(Players.getLocal().getLocation(), Storage.room1)) {
-			Storage.tile = Storage.cannonTile1;
-			Storage.area = Storage.room1;
+		if (Storage.inArea(Players.getLocal().getLocation(), Storage.ROOM_1)) {
+			Storage.tile = Storage.CANNON_TILE_1;
+			Storage.area = Storage.ROOM_1;
 		} else {
-			Storage.tile = Storage.cannonTile2;
-			Storage.area = Storage.room2;
+			Storage.tile = Storage.CANNON_TILE_2;
+			Storage.area = Storage.ROOM_2;
 		}
 		if (Inventory.containsOneOf(Storage.RANGING_FLASK_IDS)
 				|| Inventory.containsOneOf(Storage.RANGING_POTION_IDS)
@@ -66,7 +66,7 @@ public class WallasalkisMain extends ActiveScript implements PaintListener {
 		} else if (Inventory.containsOneOf(Storage.SUPER_ATTACK_IDS) || Inventory.containsOneOf(Storage.SUPER_STRENGTH_IDS)) {
 			melee = true;
 		}
-		if (Inventory.contains(Storage.scrollId)) {
+		if (Inventory.contains(Storage.SCROLL_ID)) {
 			usingYak = true;
 		}
 		WallasalkisMain.this.getContainer().submit(new LoopTask() {

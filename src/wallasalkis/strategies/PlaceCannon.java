@@ -24,7 +24,7 @@ public class PlaceCannon extends Node {
 		if (Players.getLocal().getLocation().equals(Storage.tile.getLocation())) {
 			if (Players.getLocal().getAnimation() != 827 || !Players.getLocal().isMoving()) {
 				if (Inventory.getItem(6) != null) {
-					Inventory.getItem(Storage.baseId).getWidgetChild().click(true);
+					Inventory.getItem(Storage.BASE_ID).getWidgetChild().click(true);
 				}
 				Task.sleep(1000,1501);
 			}
