@@ -95,13 +95,12 @@ public class WallasalkisMain extends ActiveScript implements PaintListener {
 						+ (aCount * aPrice) + (bankedTorstol * tseedPrice)
 						+ (bankedSnapdragon * sseedPrice) + (bankedDwarfWeed * dseedPrice)
 						+ (bankedLantadyme * lseedPrice);
+				
 				charmCount = goldCount + greenCount + crimsonCount + blueCount;
-                for(int i = 0; i < Storage.CHARM_IDS.length; i++)
-                {
-                    if(Inventory.getItem(Storage.CHARM_IDS[i]) != null)
-                    {
-                         switch (i)
-                         {
+				
+                for(int i = 0; i < Storage.CHARM_IDS.length; i++) {
+                    if(Inventory.getItem(Storage.CHARM_IDS[i]) != null) {
+                         switch (i) {
                              case 0:
                                  blueCount = Inventory.getCount(true, Storage.CHARM_IDS[i]);
                                  break;
@@ -117,12 +116,9 @@ public class WallasalkisMain extends ActiveScript implements PaintListener {
                     }
                 }
 
-                for(int i = 0; i < Storage.RUNE_IDS.length; i++)
-                {
-                    if(Inventory.getItem(Storage.RUNE_IDS[i]) != null)
-                    {
-                        switch(i)
-                        {
+                for(int i = 0; i < Storage.RUNE_IDS.length; i++) {
+                    if(Inventory.getItem(Storage.RUNE_IDS[i]) != null) {
+                        switch(i) {
                             case 0:
                                 deathRuneCount = Inventory.getCount(true, Storage.RUNE_IDS[i]);
                                 break;
