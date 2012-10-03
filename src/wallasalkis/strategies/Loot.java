@@ -28,8 +28,8 @@ public class Loot extends Node {
 	public void execute() {
 		WallasalkisMain.s = "Loot";
 		String[] nameParts;
-		if (Inventory.containsOneOf(Storage.junkIds)) {
-			Inventory.getItem(Storage.junkIds).getWidgetChild()
+		if (Inventory.containsOneOf(Storage.JUNK_IDS)) {
+			Inventory.getItem(Storage.JUNK_IDS).getWidgetChild()
 					.interact("Drop");
 			Task.sleep(1000, 1501);
 		}
@@ -38,13 +38,13 @@ public class Loot extends Node {
 			Task.sleep(1000, 1501);
 		}
 		try {
-			GroundItem charms = GroundItems.getNearest(Storage.charmIds), runes = GroundItems
-					.getNearest(Storage.runeIds), skeletalObjects = GroundItems
-					.getNearest(Storage.skeletalIds), flasks = GroundItems
-					.getNearest(Storage.prayerFlaskIds), potions = GroundItems
-					.getNearest(Storage.prayerPotionIds), seeds = GroundItems
-					.getNearest(Storage.seedIds), herbs = GroundItems
-					.getNearest(Storage.herbIds),
+			GroundItem charms = GroundItems.getNearest(Storage.CHARM_IDS), runes = GroundItems
+					.getNearest(Storage.RUNE_IDS), skeletalObjects = GroundItems
+					.getNearest(Storage.SKELETAL_IDS), flasks = GroundItems
+					.getNearest(Storage.PRAYER_FLASK_IDS), potions = GroundItems
+					.getNearest(Storage.PRAYER_POTION_IDS), seeds = GroundItems
+					.getNearest(Storage.SEED_IDS), herbs = GroundItems
+					.getNearest(Storage.HERB_IDS),
 					ticket = GroundItems.getNearest(Storage.spinTicketId);
 			if (ticket != null && Storage.area.contains(ticket)) {
 				if (ticket.isOnScreen() && !Players.getLocal().isMoving()) {

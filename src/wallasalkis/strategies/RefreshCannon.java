@@ -25,20 +25,20 @@ public class RefreshCannon extends Node {
 		if (cannon != null && cannon.isOnScreen()) {
 			if (Inventory.getCount() > 24) {
                 while (Inventory.getCount() > 24) {
-                    if (Inventory.getItem(Storage.prayerFlaskIds) != null) {
-                        Inventory.getItem(Storage.prayerFlaskIds)
+                    if (Inventory.getItem(Storage.PRAYER_FLASK_IDS) != null) {
+                        Inventory.getItem(Storage.PRAYER_FLASK_IDS)
                                 .getWidgetChild().interact("Drop");
                     }
-                    else if (Inventory.getItem(Storage.prayerPotionIds) != null) {
-                        Inventory.getItem(Storage.prayerPotionIds)
+                    else if (Inventory.getItem(Storage.PRAYER_POTION_IDS) != null) {
+                        Inventory.getItem(Storage.PRAYER_POTION_IDS)
                                 .getWidgetChild().interact("Drop");
                     }
-                    else if (Inventory.containsOneOf(Storage.renewalFlaskIds)) {
-                        Inventory.getItem(Storage.renewalFlaskIds)
+                    else if (Inventory.containsOneOf(Storage.RENEWAL_FLASK_IDS)) {
+                        Inventory.getItem(Storage.RENEWAL_FLASK_IDS)
                         .getWidgetChild().interact("Drop");
                     }
-                    else if (Inventory.containsOneOf(Storage.renewalPotionIds)) {
-                        Inventory.getItem(Storage.renewalPotionIds)
+                    else if (Inventory.containsOneOf(Storage.RENEWAL_POTION_IDS)) {
+                        Inventory.getItem(Storage.RENEWAL_POTION_IDS)
                         .getWidgetChild().interact("Drop");
                     }
                 }

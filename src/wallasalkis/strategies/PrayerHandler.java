@@ -15,8 +15,8 @@ public class PrayerHandler extends Node {
 		(!Prayer.isQuickOn()
 				|| Prayer.getPoints() <= 150
 				|| (WallasalkisMain.renewal > 300 
-						&& (Inventory.containsOneOf(Storage.renewalFlaskIds) 
-								|| Inventory.containsOneOf(Storage.renewalPotionIds))));
+						&& (Inventory.containsOneOf(Storage.RENEWAL_FLASK_IDS) 
+								|| Inventory.containsOneOf(Storage.RENEWAL_POTION_IDS))));
 	}
 
 	@Override
@@ -27,26 +27,26 @@ public class PrayerHandler extends Node {
 			Task.sleep(1000, 1501);
 		}
 		if (Prayer.getPoints() < 150) {
-			if (Inventory.getItem(Storage.prayerFlaskIds) != null) {
-				Inventory.getItem(Storage.prayerFlaskIds).getWidgetChild().click(true);
+			if (Inventory.getItem(Storage.PRAYER_FLASK_IDS) != null) {
+				Inventory.getItem(Storage.PRAYER_FLASK_IDS).getWidgetChild().click(true);
 				Task.sleep(1100, 1201);
-			} else if (Inventory.getItem(Storage.prayerPotionIds) != null) {
-				Inventory.getItem(Storage.prayerPotionIds).getWidgetChild().click(true);
+			} else if (Inventory.getItem(Storage.PRAYER_POTION_IDS) != null) {
+				Inventory.getItem(Storage.PRAYER_POTION_IDS).getWidgetChild().click(true);
 				Task.sleep(1100, 1201);
 			}
 		}
 		if (WallasalkisMain.renewal > 300) {
 			System.out.println("Renewal timed out, refreshing");
-			if (Inventory.getItem(Storage.renewalFlaskIds) != null 
-					|| Inventory.getItem(Storage.renewalPotionIds) != null) {
+			if (Inventory.getItem(Storage.RENEWAL_FLASK_IDS) != null 
+					|| Inventory.getItem(Storage.RENEWAL_POTION_IDS) != null) {
 				WallasalkisMain.renewal = 0;
 			}
-			if (Inventory.getItem(Storage.renewalFlaskIds) != null) {
-				Inventory.getItem(Storage.renewalFlaskIds).getWidgetChild().interact("Drink");
+			if (Inventory.getItem(Storage.RENEWAL_FLASK_IDS) != null) {
+				Inventory.getItem(Storage.RENEWAL_FLASK_IDS).getWidgetChild().interact("Drink");
 				Task.sleep(150,201);
 				WallasalkisMain.renewal = 0;
-			} else if (Inventory.getItem(Storage.renewalPotionIds) != null) {
-				Inventory.getItem(Storage.renewalPotionIds).getWidgetChild().interact("Drink");
+			} else if (Inventory.getItem(Storage.RENEWAL_POTION_IDS) != null) {
+				Inventory.getItem(Storage.RENEWAL_POTION_IDS).getWidgetChild().interact("Drink");
 				Task.sleep(150,201);
 				WallasalkisMain.renewal = 0;
 			}

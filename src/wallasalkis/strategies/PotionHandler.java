@@ -22,11 +22,11 @@ public class PotionHandler extends Node {
 					&& ((Skills.getLevel(Skills.RANGE) - Skills
 							.getRealLevel(Skills.RANGE)) <= 3)
 					&& !WallasalkisMain.refreshCannon
-					&& (Inventory.containsOneOf(Storage.extremeFlaskIds)
+					&& (Inventory.containsOneOf(Storage.EXTREME_FLASK_IDS)
 							|| Inventory
-									.containsOneOf(Storage.extremePotionIds)
-							|| Inventory.containsOneOf(Storage.rangingFlaskIds) || Inventory
-								.containsOneOf(Storage.rangingPotionIds));
+									.containsOneOf(Storage.EXTREME_POTION_IDS)
+							|| Inventory.containsOneOf(Storage.RANGING_FLASK_IDS) || Inventory
+								.containsOneOf(Storage.RANGING_POTION_IDS));
 		} else if (WallasalkisMain.melee) {
 			return cannon != null
 					&& Prayer.getPoints() > 155
@@ -37,8 +37,8 @@ public class PotionHandler extends Node {
 					|| Skills.getLevel(Skills.STRENGTH)
 							- Skills.getRealLevel(Skills.STRENGTH) <= 3)
 					&& !WallasalkisMain.refreshCannon
-					&& (Inventory.containsOneOf(Storage.superAttackIds) || Inventory
-							.containsOneOf(Storage.superStrengthIds));
+					&& (Inventory.containsOneOf(Storage.SUPER_ATTACK_IDS) || Inventory
+							.containsOneOf(Storage.SUPER_STRENGTH_IDS));
 		}
 		return false;
 	}
@@ -47,34 +47,34 @@ public class PotionHandler extends Node {
 	public void execute() {
 		WallasalkisMain.s = "PotionHandler()";
 		try {
-			if (Inventory.getItem(Storage.extremeFlaskIds) != null
+			if (Inventory.getItem(Storage.EXTREME_FLASK_IDS) != null
 					&& Storage.getLevelBoost(Skills.RANGE) <= 3) {
-				Inventory.getItem(Storage.extremeFlaskIds).getWidgetChild()
+				Inventory.getItem(Storage.EXTREME_FLASK_IDS).getWidgetChild()
 						.click(true);
 				Task.sleep(1000, 1501);
-			} else if (Inventory.getItem(Storage.extremePotionIds) != null
+			} else if (Inventory.getItem(Storage.EXTREME_POTION_IDS) != null
 					&& Storage.getLevelBoost(Skills.RANGE) <= 3) {
-				Inventory.getItem(Storage.extremePotionIds).getWidgetChild()
+				Inventory.getItem(Storage.EXTREME_POTION_IDS).getWidgetChild()
 						.click(true);
 				Task.sleep(1000, 1501);
-			} else if (Inventory.getItem(Storage.rangingFlaskIds) != null
+			} else if (Inventory.getItem(Storage.RANGING_FLASK_IDS) != null
 					&& Storage.getLevelBoost(Skills.RANGE) <= 3) {
-				Inventory.getItem(Storage.rangingFlaskIds).getWidgetChild()
+				Inventory.getItem(Storage.RANGING_FLASK_IDS).getWidgetChild()
 						.click(true);
 				Task.sleep(1000, 1501);
-			} else if (Inventory.getItem(Storage.rangingPotionIds) != null
+			} else if (Inventory.getItem(Storage.RANGING_POTION_IDS) != null
 					&& Storage.getLevelBoost(Skills.RANGE) <= 3) {
-				Inventory.getItem(Storage.rangingPotionIds).getWidgetChild()
+				Inventory.getItem(Storage.RANGING_POTION_IDS).getWidgetChild()
 						.click(true);
 				Task.sleep(1000, 1501);
-			} else if (Inventory.getItem(Storage.superAttackIds) != null
+			} else if (Inventory.getItem(Storage.SUPER_ATTACK_IDS) != null
 					&& Storage.getLevelBoost(Skills.ATTACK) <= 3) {
-				Inventory.getItem(Storage.superAttackIds).getWidgetChild()
+				Inventory.getItem(Storage.SUPER_ATTACK_IDS).getWidgetChild()
 						.click(true);
 				Task.sleep(1000, 1501);
-			} else if (Inventory.getItem(Storage.superStrengthIds) != null
+			} else if (Inventory.getItem(Storage.SUPER_STRENGTH_IDS) != null
 					&& Storage.getLevelBoost(Skills.STRENGTH) <= 3) {
-				Inventory.getItem(Storage.superStrengthIds).getWidgetChild()
+				Inventory.getItem(Storage.SUPER_STRENGTH_IDS).getWidgetChild()
 						.click(true);
 				Task.sleep(1000, 1501);
 			}

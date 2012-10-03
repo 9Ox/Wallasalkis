@@ -58,12 +58,12 @@ public class WallasalkisMain extends ActiveScript implements PaintListener {
 			Storage.tile = Storage.cannonTile2;
 			Storage.area = Storage.room2;
 		}
-		if (Inventory.containsOneOf(Storage.rangingFlaskIds) 
-				|| Inventory.containsOneOf(Storage.rangingPotionIds)
-				|| Inventory.containsOneOf(Storage.extremeFlaskIds)
-				|| Inventory.containsOneOf(Storage.extremePotionIds)) {
+		if (Inventory.containsOneOf(Storage.RANGING_FLASK_IDS)
+				|| Inventory.containsOneOf(Storage.RANGING_POTION_IDS)
+				|| Inventory.containsOneOf(Storage.EXTREME_FLASK_IDS)
+				|| Inventory.containsOneOf(Storage.EXTREME_POTION_IDS)) {
 			range = true;
-		} else if (Inventory.containsOneOf(Storage.superAttackIds) || Inventory.containsOneOf(Storage.superStrengthIds)) {
+		} else if (Inventory.containsOneOf(Storage.SUPER_ATTACK_IDS) || Inventory.containsOneOf(Storage.SUPER_STRENGTH_IDS)) {
 			melee = true;
 		}
 		if (Inventory.contains(Storage.scrollId)) {
@@ -96,26 +96,26 @@ public class WallasalkisMain extends ActiveScript implements PaintListener {
 						+ (bankedSnapdragon * sseedPrice) + (bankedDwarfWeed * dseedPrice)
 						+ (bankedLantadyme * lseedPrice);
 				charmCount = goldCount + greenCount + crimsonCount + blueCount;
-				if (Inventory.getItem(Storage.charmIds[0]) != null) {
-					blueCount = Inventory.getCount(true, Storage.charmIds[0]);
+				if (Inventory.getItem(Storage.CHARM_IDS[0]) != null) {
+					blueCount = Inventory.getCount(true, Storage.CHARM_IDS[0]);
 				}
-				if (Inventory.getItem(Storage.charmIds[1]) != null) {
-					crimsonCount = Inventory.getCount(true, Storage.charmIds[1]);
+				if (Inventory.getItem(Storage.CHARM_IDS[1]) != null) {
+					crimsonCount = Inventory.getCount(true, Storage.CHARM_IDS[1]);
 				}
-				if (Inventory.getItem(Storage.charmIds[2]) != null) {
-					greenCount = Inventory.getCount(true, Storage.charmIds[2]);
+				if (Inventory.getItem(Storage.CHARM_IDS[2]) != null) {
+					greenCount = Inventory.getCount(true, Storage.CHARM_IDS[2]);
 				}
-				if (Inventory.getItem(Storage.charmIds[3]) != null) {
-					goldCount = Inventory.getCount(true, Storage.charmIds[3]);
+				if (Inventory.getItem(Storage.CHARM_IDS[3]) != null) {
+					goldCount = Inventory.getCount(true, Storage.CHARM_IDS[3]);
 				}
-				if (Inventory.getItem(Storage.runeIds[0]) != null) {
-					deathRuneCount = Inventory.getCount(true, Storage.runeIds[0]);
+				if (Inventory.getItem(Storage.CHARM_IDS[0]) != null) {
+					deathRuneCount = Inventory.getCount(true, Storage.CHARM_IDS[0]);
 				}
-				if (Inventory.getItem(Storage.runeIds[1]) != null) {
-					bloodRuneCount = Inventory.getCount(true, Storage.runeIds[1]);
+				if (Inventory.getItem(Storage.CHARM_IDS[1]) != null) {
+					bloodRuneCount = Inventory.getCount(true, Storage.CHARM_IDS[1]);
 				}
-				if (Inventory.getItem(Storage.runeIds[2]) != null) {
-					essCount = Inventory.getCount(true, Storage.runeIds[2]);
+				if (Inventory.getItem(Storage.CHARM_IDS[2]) != null) {
+					essCount = Inventory.getCount(true, Storage.CHARM_IDS[2]);
 				}
 				gloveCount = bankedGloves;
 				bootCount = bankedBoots;
@@ -127,36 +127,36 @@ public class WallasalkisMain extends ActiveScript implements PaintListener {
 		log.info("If you experience any bugs, please report them on the script thread");
 
 		// Stores prices
-		deathPrice = Storage.getPrice(Storage.runeIds[0]);
-		bloodPrice = Storage.getPrice(Storage.runeIds[1]);
+		deathPrice = Storage.getPrice(Storage.CHARM_IDS[0]);
+		bloodPrice = Storage.getPrice(Storage.CHARM_IDS[1]);
 		essPrice = Storage.getPrice(7936);
-		glovePrice = Storage.getPrice(Storage.skeletalIds[0]);
-		bootPrice = Storage.getPrice(Storage.skeletalIds[1]);
-		lPrice = Storage.getPrice(Storage.herbIds[0]); 
-		dPrice = Storage.getPrice(Storage.herbIds[1]); 
-		rPrice = Storage.getPrice(Storage.herbIds[2]);
-		aPrice = Storage.getPrice(Storage.herbIds[3]);
-		tseedPrice = Storage.getPrice(Storage.seedIds[0]); 
-		sseedPrice = Storage.getPrice(Storage.seedIds[1]);
-		lseedPrice = Storage.getPrice(Storage.seedIds[2]);
-		dseedPrice = Storage.getPrice(Storage.seedIds[3]); 
+		glovePrice = Storage.getPrice(Storage.SKELETAL_IDS[0]);
+		bootPrice = Storage.getPrice(Storage.SKELETAL_IDS[1]);
+		lPrice = Storage.getPrice(Storage.HERB_IDS[0]); 
+		dPrice = Storage.getPrice(Storage.HERB_IDS[1]); 
+		rPrice = Storage.getPrice(Storage.HERB_IDS[2]);
+		aPrice = Storage.getPrice(Storage.HERB_IDS[3]);
+		tseedPrice = Storage.getPrice(Storage.SEED_IDS[0]); 
+		sseedPrice = Storage.getPrice(Storage.SEED_IDS[1]);
+		lseedPrice = Storage.getPrice(Storage.SEED_IDS[2]);
+		dseedPrice = Storage.getPrice(Storage.SEED_IDS[3]); 
 
 		// Gets the starting xp to track xp gained
 		startExp = Skills.getExperience(Skills.RANGE);
 
 		// Checks for renewal potions, if they exist,
 		// start a new renewal timer and drink the renewal flask/potion
-		if (Inventory.getItem(Storage.renewalFlaskIds) != null) {
-			Inventory.getItem(Storage.renewalFlaskIds).getWidgetChild()
+		if (Inventory.getItem(Storage.RENEWAL_FLASK_IDS) != null) {
+			Inventory.getItem(Storage.RENEWAL_FLASK_IDS).getWidgetChild()
 					.click(true);
 			System.out.println("Renewals detected, starting timer");
-		} else if (Inventory.getItem(Storage.renewalPotionIds) != null) {
-			Inventory.getItem(Storage.renewalPotionIds).getWidgetChild()
+		} else if (Inventory.getItem(Storage.RENEWAL_POTION_IDS) != null) {
+			Inventory.getItem(Storage.RENEWAL_POTION_IDS).getWidgetChild()
 					.click(true);
 			System.out.println("Renewals detected, starting timer");
 		}
-		if (!Inventory.containsOneOf(Storage.prayerFlaskIds) 
-				&& !Inventory.containsOneOf(Storage.prayerPotionIds)) {
+		if (!Inventory.containsOneOf(Storage.PRAYER_FLASK_IDS) 
+				&& !Inventory.containsOneOf(Storage.PRAYER_POTION_IDS)) {
 			noPrayers = true;
 			log.info("noprayers=true");
 		}

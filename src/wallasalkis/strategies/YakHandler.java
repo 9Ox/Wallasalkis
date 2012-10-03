@@ -19,9 +19,9 @@ public class YakHandler extends Node {
 				&& Inventory.getItem(Storage.scrollId) != null
 				&& WallasalkisMain.usingYak
 				&& SceneEntities.getNearest(Storage.baseId) != null
-				&& (Inventory.containsOneOf(Storage.skeletalIds)
-						|| Inventory.containsOneOf(Storage.seedIds) || Inventory
-							.containsOneOf(Storage.herbIds))) 
+				&& (Inventory.containsOneOf(Storage.SKELETAL_IDS)
+						|| Inventory.containsOneOf(Storage.SEED_IDS) || Inventory
+							.containsOneOf(Storage.HERB_IDS))) 
 							|| (!Summoning.isFamiliarSummoned()
 									&& WallasalkisMain.usingYak);
 	}
@@ -38,11 +38,11 @@ public class YakHandler extends Node {
 		}
 		try {
 			if (!Summoning.isFamiliarSummoned()) {
-				if (Inventory.getItem(Storage.summoningPotionIds) != null
+				if (Inventory.getItem(Storage.SUMMONING_POTION_IDS) != null
 						&& Skills.getLevel(Skills.SUMMONING) < 30) {
 					System.out
 							.println("Points below 30 and yak needs a refresh, drinking potion");
-					Inventory.getItem(Storage.summoningPotionIds)
+					Inventory.getItem(Storage.SUMMONING_POTION_IDS)
 							.getWidgetChild().click(true);
 					Task.sleep(600,1001);
 				}
@@ -52,10 +52,10 @@ public class YakHandler extends Node {
 					Task.sleep(1000, 1501);
 				}
 			}
-			for (int i = 0; i < Storage.skeletalIds.length; i++) {
-				if (Inventory.getItem(Storage.skeletalIds[i]) != null) {
+			for (int i = 0; i < Storage.SKELETAL_IDS.length; i++) {
+				if (Inventory.getItem(Storage.SKELETAL_IDS[i]) != null) {
 					Widgets.get(548).getChild(165).interact("Cast");
-					if (Inventory.getItem(Storage.skeletalIds[i])
+					if (Inventory.getItem(Storage.SKELETAL_IDS[i])
 							.getWidgetChild().click(true)) {
 						System.out.println("Click success");
 						switch (i) {
@@ -70,10 +70,10 @@ public class YakHandler extends Node {
 					}
 				}
 			}
-			for (int i = 0; i < Storage.seedIds.length; i++) {
-				if (Inventory.getItem(Storage.seedIds[i]) != null) {
+			for (int i = 0; i < Storage.SEED_IDS.length; i++) {
+				if (Inventory.getItem(Storage.SEED_IDS[i]) != null) {
 					Widgets.get(548).getChild(165).interact("Cast");
-					if (Inventory.getItem(Storage.seedIds[i]).getWidgetChild()
+					if (Inventory.getItem(Storage.SEED_IDS[i]).getWidgetChild()
 							.click(true)) {
 						System.out.println("Click success");
 						switch (i) {
@@ -94,10 +94,10 @@ public class YakHandler extends Node {
 					}
 				}
 			}
-			for (int i = 0; i < Storage.herbIds.length; i++) {
-				if (Inventory.getItem(Storage.herbIds[i]) != null) {
+			for (int i = 0; i < Storage.HERB_IDS.length; i++) {
+				if (Inventory.getItem(Storage.HERB_IDS[i]) != null) {
 					Widgets.get(548).getChild(165).interact("Cast");
-					if (Inventory.getItem(Storage.herbIds[i]).getWidgetChild()
+					if (Inventory.getItem(Storage.HERB_IDS[i]).getWidgetChild()
 							.click(true)) {
 						System.out.println("Click success");
 						// l d r a
@@ -119,60 +119,7 @@ public class YakHandler extends Node {
 					}
 				}
 			}
-
-			/*
-			 * if (Inventory.getItem(Storage.skeletalIds[0]) != null) {
-			 * Widgets.get(548).getChild(165).interact("Cast"); if
-			 * (Inventory.getItem(Storage.skeletalIds[0]).getWidgetChild()
-			 * .click(true)) { System.out.println("Click success");
-			 * WallasalkisMain.bankedGloves++; Task.sleep(1500, 2001); } } else
-			 * if (Inventory.getItem(Storage.skeletalIds[1]) != null) {
-			 * Widgets.get(548).getChild(165).interact("Cast"); if
-			 * (Inventory.getItem(Storage.skeletalIds[1]).getWidgetChild()
-			 * .click(true)) { System.out.println("Click success");
-			 * WallasalkisMain.bankedBoots++; Task.sleep(1500, 2001); } } else
-			 * if (Inventory.getItem(Storage.seedIds[0]) != null) {
-			 * Widgets.get(548).getChild(165).interact("Cast"); if
-			 * (Inventory.getItem(Storage.seedIds[0]).getWidgetChild()
-			 * .click(true)) { System.out.println("Click success");
-			 * WallasalkisMain.bankedTorstol++; Task.sleep(1500, 2001); } } else
-			 * if (Inventory.getItem(Storage.seedIds[1]) != null) {
-			 * Widgets.get(548).getChild(165).interact("Cast"); if
-			 * (Inventory.getItem(Storage.seedIds[1]).getWidgetChild()
-			 * .click(true)) { System.out.println("Click success");
-			 * WallasalkisMain.bankedSnapdragon++; Task.sleep(1500, 2001); } }
-			 * else if (Inventory.getItem(Storage.seedIds[2]) != null) {
-			 * Widgets.get(548).getChild(165).interact("Cast"); if
-			 * (Inventory.getItem(Storage.seedIds[2]).getWidgetChild()
-			 * .click(true)) { System.out.println("Click success");
-			 * WallasalkisMain.bankedLantadyme++; Task.sleep(1500, 2001); } }
-			 * else if (Inventory.getItem(Storage.seedIds[3]) != null) {
-			 * Widgets.get(548).getChild(165).interact("Cast"); if
-			 * (Inventory.getItem(Storage.seedIds[3]).getWidgetChild()
-			 * .click(true)) { System.out.println("Click success");
-			 * WallasalkisMain.bankedDwarfWeed++; Task.sleep(1500, 2001); } }
-			 * else if (Inventory.getItem(Storage.herbIds[0]) != null) {
-			 * Widgets.get(548).getChild(165).interact("Cast"); if
-			 * (Inventory.getItem(Storage.herbIds[0]).getWidgetChild()
-			 * .click(true)) { System.out.println("Click success");
-			 * WallasalkisMain.lCount++; Task.sleep(1500, 2001); } } else if
-			 * (Inventory.getItem(Storage.herbIds[1]) != null) {
-			 * Widgets.get(548).getChild(165).interact("Cast"); if
-			 * (Inventory.getItem(Storage.herbIds[1]).getWidgetChild()
-			 * .click(true)) { System.out.println("Click success");
-			 * WallasalkisMain.dCount++; Task.sleep(1500, 2001); } } else if
-			 * (Inventory.getItem(Storage.herbIds[2]) != null) {
-			 * Widgets.get(548).getChild(165).interact("Cast"); if
-			 * (Inventory.getItem(Storage.herbIds[2]).getWidgetChild()
-			 * .click(true)) { System.out.println("Click success");
-			 * WallasalkisMain.rCount++; Task.sleep(1500, 2001); } } else if
-			 * (Inventory.getItem(Storage.herbIds[3]) != null) {
-			 * Widgets.get(548).getChild(165).interact("Cast"); if
-			 * (Inventory.getItem(Storage.herbIds[3]).getWidgetChild()
-			 * .click(true)) { System.out.println("Click success");
-			 * WallasalkisMain.aCount++; Task.sleep(1500, 2001); } }
-			 */
-		} catch (Exception e) {
+          } catch (Exception e) {
 			e.printStackTrace();
 		}
 	}

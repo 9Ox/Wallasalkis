@@ -23,27 +23,27 @@ import org.powerbot.game.bot.Context;
 import org.powerbot.game.client.Client;
 
 public class Storage {
-	public final static int[] cannonIds = { 6,8,10,12 },
-			prayerFlaskIds = { 23253,23251,23249,23247,23245,23243 }, //1,2,3,4,5,6
-			prayerPotionIds = { 143,141,139,2434 }, //1,2,3,4
-			renewalFlaskIds = { 23619,23617,23615,23613,23611,23609 }, //1,2,3,4,5,6
-			renewalPotionIds = { 21636,21534,21632,21630 }, //1,2,3,4
-			teleTabIds = { 8007, 8008, 8009, 8010, 8011, 8013 },
-			charmIds = { 12163,12160,12159,12158 }, //blue,crimson,green,gold
-			runeIds = { 560, 565, 7937 }, //death, blood, ess
-			skeletalIds = { 6153, 6147, 6163 }, //glove, boot, skull
-			rangingPotionIds = { 173, 171, 169, 2444 }, //1,2,3,4
-			rangingFlaskIds = { 23313, 23311, 23309, 23307, 23305, 23303 }, //1,2,3,4,5,6
-			extremeFlaskIds = { 23524, 23523, 23522, 23521, 23520, 23519 },
-			extremePotionIds = { 15327, 15326, 15325, 15324 }, //1,2,3,4
-			summoningPotionIds = { 12146, 12144, 12142, 12140 }, //1,2,3,4
-			junkIds = { 556, 557, 555, 526 },
-			seedIds = { 5304, 5300, 5302, 5304 }, //torstol, snapdragon, lantadyme, dwarfweed
-			herbIds = { 2485, 217, 207, 211 }, //lantadyme, dwarfweed, ranarr, avantoe
-			superPrayerFlaskIds = { 23525 },
-			superPrayerPotionIds = { 15328 },
-			superStrengthIds = { 161, 159, 157, 2440 }, //1,2,3,4
-			superAttackIds = { 149, 147, 145, 2436 }; //1,2,3,4
+	public final static int[] CANNON_IDS = { 6,8,10,12 },
+			PRAYER_FLASK_IDS = { 23253,23251,23249,23247,23245,23243 }, //1,2,3,4,5,6
+			PRAYER_POTION_IDS = { 143,141,139,2434 }, //1,2,3,4
+			RENEWAL_FLASK_IDS = { 23619,23617,23615,23613,23611,23609 }, //1,2,3,4,5,6
+			RENEWAL_POTION_IDS = { 21636,21534,21632,21630 }, //1,2,3,4
+			TELE_TAB_IDS = { 8007, 8008, 8009, 8010, 8011, 8013 },
+			CHARM_IDS = { 12163,12160,12159,12158 }, //blue,crimson,green,gold
+			RUNE_IDS = { 560, 565, 7937 }, //death, blood, ess
+			SKELETAL_IDS = { 6153, 6147, 6163 }, //glove, boot, skull
+			RANGING_POTION_IDS = { 173, 171, 169, 2444 }, //1,2,3,4
+			RANGING_FLASK_IDS = { 23313, 23311, 23309, 23307, 23305, 23303 }, //1,2,3,4,5,6
+			EXTREME_FLASK_IDS = { 23524, 23523, 23522, 23521, 23520, 23519 },
+			EXTREME_POTION_IDS = { 15327, 15326, 15325, 15324 }, //1,2,3,4
+			SUMMONING_POTION_IDS = { 12146, 12144, 12142, 12140 }, //1,2,3,4
+			JUNK_IDS = { 556, 557, 555, 526 },
+			SEED_IDS = { 5304, 5300, 5302, 5304 }, //torstol, snapdragon, lantadyme, dwarfweed
+			HERB_IDS = { 2485, 217, 207, 211 }, //lantadyme, dwarfweed, ranarr, avantoe
+			SUPER_PRAYER_FLASK_IDS = { 23525 },
+			SUPER_PRAYER_POTION_IDS = { 15328 },
+			SUPER_STRENGTH_IDS = { 161, 159, 157, 2440 }, //1,2,3,4
+			SUPER_ATTACK_IDS = { 149, 147, 145, 2436 }; //1,2,3,4
 	
 	public static final int baseId = 6,
 			pouchId = 12093,

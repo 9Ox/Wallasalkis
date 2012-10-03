@@ -14,11 +14,11 @@ public class Teleport extends Node {
 	@Override
 	public boolean activate() {
 		if (WallasalkisMain.noPrayers) {
-			return !Inventory.containsOneOf(Storage.renewalFlaskIds)
-					&& !Inventory.containsOneOf(Storage.renewalPotionIds);
+			return !Inventory.containsOneOf(Storage.RENEWAL_FLASK_IDS)
+					&& !Inventory.containsOneOf(Storage.RENEWAL_POTION_IDS);
 		} else if (!WallasalkisMain.noPrayers) {
-			return Inventory.getItem(Storage.prayerFlaskIds) == null
-				&& Inventory.getItem(Storage.prayerPotionIds) == null;
+			return Inventory.getItem(Storage.PRAYER_FLASK_IDS) == null
+				&& Inventory.getItem(Storage.PRAYER_POTION_IDS) == null;
 		}
 		return false;
 	}
@@ -29,13 +29,13 @@ public class Teleport extends Node {
 		WallasalkisMain.s = "Teleport";
 		try {
 			if (WallasalkisMain.noPrayers
-					&& (!Inventory.containsOneOf(Storage.renewalFlaskIds) && !Inventory
-							.containsOneOf(Storage.renewalPotionIds))) {
+					&& (!Inventory.containsOneOf(Storage.RENEWAL_FLASK_IDS) && !Inventory
+							.containsOneOf(Storage.RENEWAL_POTION_IDS))) {
 				if (cannon != null) {
 					if (cannon.interact("Pick-up")) {
 						Task.sleep(3000,5001);
-						if (Inventory.getItem(Storage.teleTabIds) != null) {
-							Inventory.getItem(Storage.teleTabIds)
+						if (Inventory.getItem(Storage.TELE_TAB_IDS) != null) {
+							Inventory.getItem(Storage.TELE_TAB_IDS)
 									.getWidgetChild().click(true);
 							Task.sleep(2000, 3001);
 							Context.get().getScriptHandler().stop();
@@ -46,8 +46,8 @@ public class Teleport extends Node {
 				if (cannon != null) {
 					if (cannon.interact("Pick-up")) {
 						Task.sleep(3000,5001);
-						if (Inventory.getItem(Storage.teleTabIds) != null) {
-							Inventory.getItem(Storage.teleTabIds)
+						if (Inventory.getItem(Storage.TELE_TAB_IDS) != null) {
+							Inventory.getItem(Storage.TELE_TAB_IDS)
 									.getWidgetChild().click(true);
 							Task.sleep(2000, 3001);
 							Context.get().getScriptHandler().stop();
