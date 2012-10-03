@@ -96,7 +96,46 @@ public class WallasalkisMain extends ActiveScript implements PaintListener {
 						+ (bankedSnapdragon * sseedPrice) + (bankedDwarfWeed * dseedPrice)
 						+ (bankedLantadyme * lseedPrice);
 				charmCount = goldCount + greenCount + crimsonCount + blueCount;
-				if (Inventory.getItem(Storage.CHARM_IDS[0]) != null) {
+                for(int i = 0; i < Storage.CHARM_IDS.length; i++)
+                {
+                    if(Inventory.getItem(Storage.CHARM_IDS[i]) != null)
+                    {
+                         switch (i)
+                         {
+                             case 0:
+                                 blueCount = Inventory.getCount(true, Storage.CHARM_IDS[i]);
+                                 break;
+                             case 1:
+                                 crimsonCount = Inventory.getCount(true, Storage.CHARM_IDS[i]);
+                                 break;
+                             case 2:
+                                 greenCount = Inventory.getCount(true, Storage.CHARM_IDS[i]);
+                                 break;
+                             case 3:
+                                 goldCount = Inventory.getCount(true, Storage.CHARM_IDS[i]);
+                         }
+                    }
+                }
+
+                for(int i = 0; i < Storage.RUNE_IDS.length; i++)
+                {
+                    if(Inventory.getItem(Storage.RUNE_IDS[i]) != null)
+                    {
+                        switch(i)
+                        {
+                            case 0:
+                                deathRuneCount = Inventory.getCount(true, Storage.RUNE_IDS[i]);
+                                break;
+                            case 1:
+                                bloodRuneCount = Inventory.getCount(true, Storage.RUNE_IDS[i]);
+                                break;
+                            case 2:
+                                essCount = Inventory.getCount(true, Storage.RUNE_IDS[i]);
+                                break;
+                        }
+                    }
+                }
+				/*if (Inventory.getItem(Storage.CHARM_IDS[0]) != null) {
 					blueCount = Inventory.getCount(true, Storage.CHARM_IDS[0]);
 				}
 				if (Inventory.getItem(Storage.CHARM_IDS[1]) != null) {
@@ -108,15 +147,16 @@ public class WallasalkisMain extends ActiveScript implements PaintListener {
 				if (Inventory.getItem(Storage.CHARM_IDS[3]) != null) {
 					goldCount = Inventory.getCount(true, Storage.CHARM_IDS[3]);
 				}
-				if (Inventory.getItem(Storage.CHARM_IDS[0]) != null) {
-					deathRuneCount = Inventory.getCount(true, Storage.CHARM_IDS[0]);
+				if (Inventory.getItem(Storage.RUNE_IDS[0]) != null) {
+					deathRuneCount = Inventory.getCount(true, Storage.RUNE_IDS[0]);
 				}
-				if (Inventory.getItem(Storage.CHARM_IDS[1]) != null) {
-					bloodRuneCount = Inventory.getCount(true, Storage.CHARM_IDS[1]);
+				if (Inventory.getItem(Storage.RUNE_IDS[1]) != null) {
+					bloodRuneCount = Inventory.getCount(true, Storage.RUNE_IDS[1]);
 				}
-				if (Inventory.getItem(Storage.CHARM_IDS[2]) != null) {
-					essCount = Inventory.getCount(true, Storage.CHARM_IDS[2]);
-				}
+				if (Inventory.getItem(Storage.RUNE_IDS[2]) != null) {
+					essCount = Inventory.getCount(true, Storage.RUNE_IDS[2]);
+				}*/
+
 				gloveCount = bankedGloves;
 				bootCount = bankedBoots;
 				return 0;
