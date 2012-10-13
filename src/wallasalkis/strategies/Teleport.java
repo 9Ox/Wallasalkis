@@ -14,8 +14,8 @@ public class Teleport extends Node {
 	@Override
 	public boolean activate() {
 		if (WallasalkisMain.noPrayers) {
-			return !Inventory.containsOneOf(Storage.RENEWAL_FLASK_IDS)
-					&& !Inventory.containsOneOf(Storage.RENEWAL_POTION_IDS);
+			return !Inventory.contains(Storage.RENEWAL_FLASK_IDS)
+					&& !Inventory.contains(Storage.RENEWAL_POTION_IDS);
 		} else if (!WallasalkisMain.noPrayers) {
 			return Inventory.getItem(Storage.PRAYER_FLASK_IDS) == null
 				&& Inventory.getItem(Storage.PRAYER_POTION_IDS) == null;
@@ -29,8 +29,8 @@ public class Teleport extends Node {
 		WallasalkisMain.s = "Teleport";
 		try {
 			if (WallasalkisMain.noPrayers
-					&& (!Inventory.containsOneOf(Storage.RENEWAL_FLASK_IDS) && !Inventory
-							.containsOneOf(Storage.RENEWAL_POTION_IDS))) {
+					&& (!Inventory.contains(Storage.RENEWAL_FLASK_IDS) && !Inventory
+							.contains(Storage.RENEWAL_POTION_IDS))) {
 				if (cannon != null) {
 					if (cannon.interact("Pick-up")) {
 						Task.sleep(3000,5001);

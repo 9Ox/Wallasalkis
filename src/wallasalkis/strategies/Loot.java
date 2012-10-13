@@ -28,12 +28,12 @@ public class Loot extends Node {
 	public void execute() {
 		WallasalkisMain.s = "Loot";
 		String[] nameParts;
-		if (Inventory.containsOneOf(Storage.JUNK_IDS)) {
+		if (Inventory.contains(Storage.JUNK_IDS)) {
 			Inventory.getItem(Storage.JUNK_IDS).getWidgetChild()
 					.interact("Drop");
 			Task.sleep(1000, 1501);
 		}
-		if (Inventory.contains(Storage.SPIN_TICKET_ID)) {
+		if (Inventory.containsAll(Storage.SPIN_TICKET_ID)) {
 			Inventory.getItem(Storage.SPIN_TICKET_ID).getWidgetChild().click(true);
 			Task.sleep(1000, 1501);
 		}

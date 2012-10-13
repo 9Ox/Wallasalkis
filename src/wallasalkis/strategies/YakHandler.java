@@ -19,9 +19,9 @@ public class YakHandler extends Node {
 				&& Inventory.getItem(Storage.SCROLL_ID) != null
 				&& WallasalkisMain.usingYak
 				&& SceneEntities.getNearest(Storage.BASE_ID) != null
-				&& (Inventory.containsOneOf(Storage.SKELETAL_IDS)
-						|| Inventory.containsOneOf(Storage.SEED_IDS) || Inventory
-							.containsOneOf(Storage.HERB_IDS))) 
+				&& (Inventory.contains(Storage.SKELETAL_IDS)
+						|| Inventory.contains(Storage.SEED_IDS) || Inventory
+							.contains(Storage.HERB_IDS))) 
 							|| (!Summoning.isFamiliarSummoned()
 									&& WallasalkisMain.usingYak);
 	}

@@ -2,11 +2,10 @@ package wallasalkis.strategies;
 
 import org.powerbot.core.script.job.Task;
 import org.powerbot.core.script.job.state.Node;
+import org.powerbot.game.api.methods.Walking;
 import org.powerbot.game.api.methods.interactive.Players;
 import org.powerbot.game.api.methods.node.SceneEntities;
 import org.powerbot.game.api.methods.tab.Inventory;
-import org.powerbot.game.api.methods.widget.Camera;
-import org.powerbot.game.api.util.Random;
 
 import wallasalkis.main.WallasalkisMain;
 import wallasalkis.storage.Storage;
@@ -35,9 +34,7 @@ public class PlaceCannon extends Node {
 					Task.sleep(1000,1501);
 				}
 			} else {
-				Camera.setPitch(true);
-				Camera.turnTo(Storage.tile);
-				Camera.setPitch(Random.nextInt(30,70));
+				Walking.walk(Storage.tile);
 			}
 		}
 		} catch (Exception e) {

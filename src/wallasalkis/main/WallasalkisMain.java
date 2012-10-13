@@ -21,9 +21,10 @@ import org.powerbot.game.api.util.Random;
 import wallasalkis.storage.Storage;
 import wallasalkis.strategies.*;
 
-@Manifest(name = "Auto Wallasalkis BETA", description = "Kills wallasalkis for charms.", version = 0.15, 
+@Manifest(name = "Auto Wallasalkis", description = "Kills wallasalkis for charms.", version = 1.01, 
 		authors = {"TaylorSwift", "Jdog653"},
-		website = "http://www.powerbot.org/community/topic/807819-auto-wallasalkis-beta-80k-range-xp-per-hour-130-charms-per-hour-up-to-1m-cash-per-hour-with-yak/")
+		website = "http://www.powerbot.org/community/topic/807819-auto-wallasalkis-beta-80k-range-xp-per-hour-130-charms-per-hour-up-to-1m-cash-per-hour-with-yak/",
+		topic = 821007)
 public class WallasalkisMain extends ActiveScript implements PaintListener {
 	private final Tree scriptTree = new Tree(new Node[] {
 			new RefreshCannon(), new Teleport(),
@@ -51,19 +52,24 @@ public class WallasalkisMain extends ActiveScript implements PaintListener {
 	public static String s = "";
 
 	public void onStart() {
-		if (Storage.inArea(Players.getLocal().getLocation(), Storage.ROOM_1)) {
+		if (!Storage.ROOM_1.contains(Players.getLocal().getLocation()) &&
+				!Storage.ROOM_2.contains(Players.getLocal().getLocation())) {
+			log.info("Not in dungeon");
+			stop();
+		}
+		if (Storage.ROOM_1.contains(Players.getLocal().getLocation())) {
 			Storage.tile = Storage.CANNON_TILE_1;
 			Storage.area = Storage.ROOM_1;
-		} else {
+		} else if (Storage.ROOM_2.contains(Players.getLocal().getLocation())){
 			Storage.tile = Storage.CANNON_TILE_2;
 			Storage.area = Storage.ROOM_2;
 		}
-		if (Inventory.containsOneOf(Storage.RANGING_FLASK_IDS)
-				|| Inventory.containsOneOf(Storage.RANGING_POTION_IDS)
-				|| Inventory.containsOneOf(Storage.EXTREME_FLASK_IDS)
-				|| Inventory.containsOneOf(Storage.EXTREME_POTION_IDS)) {
+		if (Inventory.contains(Storage.RANGING_FLASK_IDS)
+				|| Inventory.contains(Storage.RANGING_POTION_IDS)
+				|| Inventory.contains(Storage.EXTREME_FLASK_IDS)
+				|| Inventory.contains(Storage.EXTREME_POTION_IDS)) {
 			range = true;
-		} else if (Inventory.containsOneOf(Storage.SUPER_ATTACK_IDS) || Inventory.containsOneOf(Storage.SUPER_STRENGTH_IDS)) {
+		} else if (Inventory.contains(Storage.SUPER_ATTACK_IDS) || Inventory.contains(Storage.SUPER_STRENGTH_IDS)) {
 			melee = true;
 		}
 		if (Inventory.contains(Storage.SCROLL_ID)) {
@@ -159,7 +165,7 @@ public class WallasalkisMain extends ActiveScript implements PaintListener {
 			}
 		});
 		// Informs the user that the script has successfully started
-		log.info("Wallsalkis BETA 0.15 started");
+		log.info("Wallsalkis 1.01 started");
 		log.info("If you experience any bugs, please report them on the script thread");
 
 		// Stores prices

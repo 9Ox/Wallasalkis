@@ -33,11 +33,11 @@ public class RefreshCannon extends Node {
                         Inventory.getItem(Storage.PRAYER_POTION_IDS)
                                 .getWidgetChild().interact("Drop");
                     }
-                    else if (Inventory.containsOneOf(Storage.RENEWAL_FLASK_IDS)) {
+                    else if (Inventory.contains(Storage.RENEWAL_FLASK_IDS)) {
                         Inventory.getItem(Storage.RENEWAL_FLASK_IDS)
                         .getWidgetChild().interact("Drop");
                     }
-                    else if (Inventory.containsOneOf(Storage.RENEWAL_POTION_IDS)) {
+                    else if (Inventory.contains(Storage.RENEWAL_POTION_IDS)) {
                         Inventory.getItem(Storage.RENEWAL_POTION_IDS)
                         .getWidgetChild().interact("Drop");
                     }

@@ -15,8 +15,8 @@ public class PrayerHandler extends Node {
 		(!Prayer.isQuickOn()
 				|| Prayer.getPoints() <= 150
 				|| (WallasalkisMain.renewal > 300 
-						&& (Inventory.containsOneOf(Storage.RENEWAL_FLASK_IDS) 
-								|| Inventory.containsOneOf(Storage.RENEWAL_POTION_IDS))));
+						&& (Inventory.contains(Storage.RENEWAL_FLASK_IDS) 
+								|| Inventory.contains(Storage.RENEWAL_POTION_IDS))));
 	}
 
 	@Override

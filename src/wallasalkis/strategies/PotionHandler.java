@@ -22,11 +22,11 @@ public class PotionHandler extends Node {
 					&& ((Skills.getLevel(Skills.RANGE) - Skills
 							.getRealLevel(Skills.RANGE)) <= 3)
 					&& !WallasalkisMain.refreshCannon
-					&& (Inventory.containsOneOf(Storage.EXTREME_FLASK_IDS)
+					&& (Inventory.contains(Storage.EXTREME_FLASK_IDS)
 							|| Inventory
-									.containsOneOf(Storage.EXTREME_POTION_IDS)
-							|| Inventory.containsOneOf(Storage.RANGING_FLASK_IDS) || Inventory
-								.containsOneOf(Storage.RANGING_POTION_IDS));
+									.contains(Storage.EXTREME_POTION_IDS)
+							|| Inventory.contains(Storage.RANGING_FLASK_IDS) || Inventory
+								.contains(Storage.RANGING_POTION_IDS));
 		} else if (WallasalkisMain.melee) {
 			return cannon != null
 					&& Prayer.getPoints() > 155
@@ -37,8 +37,8 @@ public class PotionHandler extends Node {
 					|| Skills.getLevel(Skills.STRENGTH)
 							- Skills.getRealLevel(Skills.STRENGTH) <= 3)
 					&& !WallasalkisMain.refreshCannon
-					&& (Inventory.containsOneOf(Storage.SUPER_ATTACK_IDS) || Inventory
-							.containsOneOf(Storage.SUPER_STRENGTH_IDS));
+					&& (Inventory.contains(Storage.SUPER_ATTACK_IDS) || Inventory
+							.contains(Storage.SUPER_STRENGTH_IDS));
 		}
 		return false;
 	}
